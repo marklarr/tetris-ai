@@ -1,0 +1,11 @@
+Mark Swatosh:
+	#Modify source code (command line options, configurations)
+	#GBFS, heuristic code
+	#Minimax with Mark Larsen
+Mark Larsen:
+	#Modify source code (graphics, etc)
+	#GBFS, heuristic code
+	#Minimax with Mark Swatosh
+	#various debugs of block placement logistics
+Zach O'Connor:
+	#Write the function for determining all valid moves, given a board and a shape.	

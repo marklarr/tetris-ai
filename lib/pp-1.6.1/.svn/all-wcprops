@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1
+END
+ppauto.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/ppauto.py
+END
+ppcommon.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/ppcommon.py
+END
+ppworker.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/ppworker.py
+END
+pptransport.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/pptransport.py
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/AUTHORS
+END
+pp.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/pp.py
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/CHANGELOG
+END
+setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/setup.py
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/COPYING
+END
+PKG-INFO
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/PKG-INFO
+END
+MANIFEST.in
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/MANIFEST.in
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/README
+END
+ppserver.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/ppserver.py
+END

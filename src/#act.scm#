@@ -1,0 +1,3 @@
+(define (accumulatelist current-list)
+        (lambda (x y) (if (null? current-list) y
+                   (x (car current-list) (accumulatelist (cdr current-list))))))

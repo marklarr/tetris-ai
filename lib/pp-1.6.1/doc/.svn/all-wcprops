@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/doc
+END
+example.config
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/doc/example.config
+END
+ppserver.1
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/doc/ppserver.1
+END
+ppdoc.html
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/larse503_tetrisai/!svn/ver/1/lib/pp-1.6.1/doc/ppdoc.html
+END
