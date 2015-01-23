@@ -18,7 +18,6 @@ from random import randint
 import tkMessageBox
 import sys
 import os
-import procname
 import pickle
 import copy
 
@@ -62,7 +61,7 @@ class status_bar( Frame ):
     Status bar to display the score and level
     """
     def __init__(self, parent):
-        Frame.__init__( self, parent )
+        Frame.__init__( self, parent, width=WIDTH )
         self.label = Label( self, bd=1, relief=SUNKEN, anchor=W )
         self.label.pack( fill=X )
         
@@ -551,11 +550,8 @@ class game_controller(object):
         """
         self.parent = parent
         self.lose = False
-	try:
-		f1 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/score.txt','r')
-		self.score = pickle.load(f1)
-	except:
-        	self.score = 0
+
+        self.score = 0
         self.level = 0
 	if BATCH_AMOUNT > 1:
 		self.delay = 10#batch mode
@@ -589,13 +585,6 @@ class game_controller(object):
             max_y=MAXY,
             offset=OFFSET
             )
-	try:
-		f8 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/gridList.txt','r')
-		gl = pickle.load(f8)
-		if gl != None:
-			self.board.gridList = gl
-	except:
-		print "ok"
 	##load in previous game
 	if self.board.landed != None:
 		newlanded = copy.deepcopy(self.board.landed)
@@ -650,26 +639,6 @@ class game_controller(object):
         
         ##make the first move
         self.ai.make_and_time_move( self.board.gridList, self.shape, self.nextShape, first=True );
-    def saveState(self):
-	global high_score
-	global total_score
-	global amount_played
-	global average
-	f2 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/high_score.txt','wb')
-	f3 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/amount_played.txt','wb')
-	f4 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/total_score.txt','wb')
-	f5 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/average.txt','wb')
-	f6 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/landed.txt','wb')
-	f7 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/score.txt','wb')
-	f8 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/gridList.txt','wb')
-
-	pickle.dump(high_score, f2)
-	pickle.dump(amount_played, f3)
-	pickle.dump(total_score, f4)
-	pickle.dump(average, f5)
-	pickle.dump(self.board.landed, f6)
-	pickle.dump(self.score, f7)
-	pickle.dump(self.board.gridList, f8)
 
     def handle_move(self, direction):
         #if you can't move then you've hit something
@@ -718,11 +687,7 @@ class game_controller(object):
 			    self.parent.destroy()
 			    sys.exit(0)
                 	#self.parent.destroy()
-			f7 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/score.txt','wb')
-			f8 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/gridList.txt','wb')
 
-			pickle.dump(0, f7)
-			pickle.dump(None, f8)
 			start()			
 
                 
@@ -739,7 +704,6 @@ class game_controller(object):
          
                 # make next move
                 self.ai.make_and_time_move(self.board.gridList, self.shape, self.nextShape )
-		self.saveState()
                 
                 # Signal that the shape has 'landed'
                 return False
@@ -808,40 +772,21 @@ class game_controller(object):
         
 def start(landed=None):
 	global BATCH_AMOUNT
-	BATCH_AMOUNT = int(sys.argv[2])
+	if len(sys.argv) > 2:
+ 		BATCH_AMOUNT = int(sys.argv[2])
 	root = Tk()
 	root.configure(highlightthickness=0)
 	global HEIGHT, WIDTH
 	root.title(sys.argv[1])
-	root.config(bg="black") 
+	root.config(bg="red") 
 	w, h = root.winfo_screenwidth(), root.winfo_screenheight()
 	HEIGHT = h
-	WIDTH = h	
+	WIDTH = w	
 	root.overrideredirect(1)
 	root.geometry("%dx%d+0+0" % (w, h))
 	theGame = game_controller( root, landed )
 	root.mainloop()
 if __name__ == "__main__":
-	procname.setprocname('Tetris-AI')
-	try:
-	
-		global high_score
-		global total_score
-		global amount_played
-		global average
-		f2 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/high_score.txt','r')
-		f3 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/amount_played.txt','r')
-		f4 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/total_score.txt','r')
-		f5 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/average.txt','r')
-		f6 = open('/home/marklar/programming/tetris-ai-4511-2/saved-data/landed.txt','r')
-		##load in saved data! 
-		high_score  = pickle.load(f2);
-		amount_played  = pickle.load(f3);
-		total_score  = pickle.load(f4);
-		average = pickle.load(f5)
-		landed = pickle.load(f6)
-		start(landed)
-	except:
-		start()
+    start()
 
 
