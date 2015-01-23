@@ -778,7 +778,7 @@ def start(landed=None):
 	root.configure(highlightthickness=0)
 	global HEIGHT, WIDTH
 	root.title(sys.argv[1])
-	root.config(bg="red") 
+	root.config(bg="gray") 
 	w, h = root.winfo_screenwidth(), root.winfo_screenheight()
 	HEIGHT = h
 	WIDTH = w	
